@@ -1,6 +1,7 @@
-package main;
+package Main;
 
 public class Conta {
+    private String qual;
     private double saldo;
     private String titular;
     private int numero;
@@ -31,7 +32,7 @@ public class Conta {
         this.numero = numero;
     }
     
-    public void debito(double valor){
+    public void debitar(double valor){
         saldo -= valor; saldo = saldo - valor;
     }
     
@@ -39,16 +40,18 @@ public class Conta {
         saldo += valor;
     }
     
-    public Conta(double saldo, String titular, int numero){
+    public Conta(String qual,double saldo, String titular, int numero){
+        this.qual = qual;
         this.saldo = saldo;
         this.titular = titular;
         this.numero = numero;
     }
-    
     public void almondega(){
-        System.out.println("----------------");
-        System.out.println(this.saldo);
-        System.out.println(this.titular);
-        System.out.println(this.numero);
+        System.out.println("------------"+this.qual+"------------");
+        System.out.println("Saldo:"+this.saldo);
+        System.out.println("Titular:"+this.titular);
+        System.out.println("Numero:"+this.numero);
     }
 }
+
+ 
